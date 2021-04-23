@@ -47,7 +47,13 @@ app.get("/", (req, res) => {
   res.end();
 });
 
-app.post("/study", (req, res) => {});
+app.post("/study", (req, res) => {
+  const { name, email, phone, message } = req.body;
+  if (name && email && phone) {
+    res.send("here is your study good sir");
+    res.end();
+  }
+});
 
 app.post("/contact", (req, res) => {
   const { name, email, phone, message } = req.body;
