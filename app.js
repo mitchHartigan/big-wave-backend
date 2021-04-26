@@ -56,7 +56,7 @@ app.post("/contact", (req, res) => {
         res.status(500).json("Sorry - we had an internal server error.");
       } else {
         console.log("email sent!" + info.response);
-        res.status(200).json("Email sent!");
+        res.status(200).json("success");
       }
     });
   }
@@ -87,7 +87,7 @@ app.post("/casestudy", (req, res) => {
         res.status(500).json("Sorry - we had an internal server error.");
       } else {
         console.log("email sent!" + info.response);
-        res.status(200).json("Email sent!");
+        res.status(200).json("success");
       }
     });
   }
