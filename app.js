@@ -84,7 +84,7 @@ app.post("/casestudy", (req, res) => {
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         console.log(err);
-        res.status(500).json("Sorry - we had an internal server error.");
+        res.status(500).json(`Server error - ${err}`);
       } else {
         console.log("email sent!" + info.response);
         res.status(200).json("success");
