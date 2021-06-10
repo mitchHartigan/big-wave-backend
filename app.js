@@ -23,12 +23,12 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "bigwave.server@gmail.com",
-    pass: "$bigwaveserver",
+    pass: "securebigwaveserver",
   },
 });
 
 app.get("/", (req, res) => {
-  res.send("Big wave email server running sucessfully.");
+  res.send("Big wave email server is up.");
   res.end();
 });
 
@@ -38,7 +38,7 @@ app.post("/contact", (req, res) => {
   if (name && email && phone) {
     const mailOptions = {
       from: "bigwave.server@gmail.com",
-      to: "mitch.hartigan@gmail.com",
+      to: "info@bigwavewater.com",
       subject:
         "[bigwavewater.com Automated Message] - New message from contact form.",
       html: `
@@ -53,7 +53,7 @@ app.post("/contact", (req, res) => {
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         console.log(err);
-        res.status(500).json("Sorry - we had an internal server error.");
+        res.status(500).json(`Sorry - ${err}`);
       } else {
         console.log("email sent!" + info.response);
         res.status(200).json("success");
