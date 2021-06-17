@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "bigwave.server@gmail.com",
-    pass: "securebigwaveserver",
+    pass: "ekcjnkfoyrkbldwx",
   },
 });
 
